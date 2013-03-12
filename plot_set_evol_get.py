@@ -49,7 +49,7 @@ ax1.yaxis.grid(True, linestyle='-', which='major', color='lightgrey',
 
 # Hide these grid behind plot objects
 ax1.set_axisbelow(True)
-ax1.set_title('Average time spend by each worker in a single sample')
+ax1.set_title('Time spend by each worker in a single sample 28 Workers')
 ax1.set_xlabel('Worker Method')
 ax1.set_ylabel('Time in seconds, log scale')
 ax1.set_yscale('log')

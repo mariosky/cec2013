@@ -1,5 +1,5 @@
 __author__ = 'mariosky'
-__author__ = 'mariosky'
+
 
 
 import ppeaks
@@ -17,7 +17,7 @@ conf_out = open("conf/"+experiment_id+".yaml","w")
 yaml.dump(config, conf_out)
 conf_out.close()
 
-for i in range(30):
+for i in range(8):
     start = time.time()
     init_job = cloud.call(ppeaks.initialize, config=config,  _type=config["WORKER_TYPE"], _env="deap")
     tInitialize = time.time()-start
