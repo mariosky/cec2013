@@ -1,0 +1,1232 @@
+% Cámbiale el nombre al fichero!
+% ¿No prefieres usar git? - JJ
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE!
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]-[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  \graphicspath{{../pdf/}{../jpeg/}{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+% El documento ocupa muy poco espacio; he puesto en doble columna la
+% primera gráfica (que no se veía nada) para que ocupe un poco más -
+% JJ
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Is there a free lunch for cloud-based evolutionary algorithms?}
+% Mejor Using free cloud services for parallel evolutionary computation o algo así . No uses nombres ni palabras raras en el título, porque no se atraen ni lectores ni buscadores.
+% low cost _cloud services_ ? - JJ
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Mario Garc\'ia-Valdez,\\ Alejandra Mancilla \\ and Leonardo Trujillo}
+\IEEEauthorblockA{Divisi\'on de Estudios de Posgrado \\
+Instituto Tecnol\'ogico de Tijuana, M\'xico \\
+mario@tectijuana.edu.mx\\
+leonardo.trujillo@tectijuana.edu.mx}
+\and
+\IEEEauthorblockN{Juan-J. Merelo}
+\IEEEauthorblockA{Departamento de Arquitectura y\\
+Tecnolog\'ia de Computadores\\
+University of Granada, Spain\\
+jmerelo@geneura.ugr.es}
+\and
+\IEEEauthorblockN{Francisco Fern\'andez-de-Vega}
+\IEEEauthorblockA{Grupo de Evoluci\'on Artificial\\
+Universidad de Extremadura, Spain\\
+fcofdez@unex.es}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+%
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3},
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332-0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555-1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+In this paper we present a distributed evolutionary algorithm that
+uses exclusively cloud services. This presents certain advantages,
+such as avoiding the acquisition of expensive resources, but at the
+same time presents the problem of choice between different
+services at different levels (infrastructure, platform, software) and,
+finally the actual scalability that can be achieved in a real
+distributed evolutionary algorithm. These issues are addressed by
+creating a pure-cloud version of EvoSpace, a pool-based evolutionary
+algorithm previously presented by the authors. EvoSpace is tested
+using the free tier of two services (one for the pool and other for
+the clients) and also the paying tier, and speedup is measured and its
+limits assessed. In general, this paper proves that a low-cost
+distributed evolutionary algorithm system can be created using cloud
+services that can be set up in very short time, but that major
+efficiency improvements can be obtained by switching to the non-free
+tier, giving another twist to the famous phrase ``there is no free
+lunch''. We also show that using a pool-based algorithm allows to use
+ cloud services more efficiently (and dynamically) than a static or
+ synchronous service.
+% important selling points: no free lunch, if you want cloud
+% performance you can't use the free cores; distributed evolutionary
+% computation can be completely outsourced to cloud services,
+% efficiency of REDIS and other NOSQL
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+The famous Sun Microsystems slogan ``The network is the computer'', represented a vision that today is in many ways a reality. The network now includes the computing power of millions of personal computers, smart mobile devices, data centers and even people \cite{Turk}. Cloud computing is defined as the use of certain computing resources, both hardware and software delivered as a service through the network, this model is now a significant part of ``the computer''. Recently there has been several efforts to exploit the computing resources available in the Internet for Evolutionary Computation (EC) research, as a low cost alternative to buying dedicated servers for this purpose. An approach is to obtain computing resources through volunteer computing, where users share their computing resources through a downloaded software \cite{MilkyWay} or their browser \cite{JSON}. Other works propose the use of cloud computing services that give for free certain amount of resources; for instance Google App Engine \cite{di2013towards} or Drop Box \cite{garcia2011}. But even when cloud resources are not free they can reduce operational costs by outsourcing hardware and software maintenance and support to the cloud provider. Another advantage of cloud services is that they enable the provisioning of resources beyond what is available in most laboratories, allowing researches to scale algorithms at reasonable costs. Researchers have proposed the use of public clusters as Amazon EC2 \cite{CloudScale}.
+
+The approach that we propose is to use the Evospace \cite{Evospace} evolutionary platform together with Heroku and PiCloud cloud services as an easy to implement and  low-cost alternative, that leverages existing tools and libraries.
+%The paper presents details on the use of these platforms, trade-offs and some %lessons learned.
+EvoSpace
+is a population storage model for the development of
+evolutionary algorithms (EA) that are intended to run on a cloud architecture \cite{varia2008cloud}.
+It is conceived as a Platform as a Service (PaaS) component, where users can create populations of individuals on demand
+without the need to install software or invest in additional hardware.
+EvoSpace is designed to be versatile, since the population is
+decoupled from any particular evolutionary (or, for that matter,
+metaheuristic) algorithm.
+Client processes, called EvoWorkers, perform the required evolutionary routines dynamically and asynchronously interacting with the population stored in EvoSpace. EvoWorkers can reside on any web enabled device from web browsers to high performance servers. Moreover, Software as a Service (SaaS) applications could also be developed using EvoSpace, where users could run entire experiments on the cloud or implement interactive applications that are completely hosted by the service.
+EvoSpace is well suited for this kind of interactive environments
+since it is robust to lost connections with remote clients. Fig.~\ref{fig:evocloud} shows a conceptual diagram of how EvoSpace fits
+within the cloud computing landscape. Evospace implementations have
+been deployed in virtual private servers (VPS), as the backend of an
+interactive evolutionary computation application \cite{Musart}.
+
+In this paper a cloud based implementation of the service is presented. The system has been implemented using two popular platforms: Heroku [\url{http://www.heroku.com/}] for the Evospace store and PiCloud [\url{http://www.picloud.com/}] as the Evoworker's computing power.   Both platforms offer to facilitate the deployment of
+applications without the complexity of managing the underlying
+hardware, software and provisioning hosting capabilities. A schematic view of the
+cloud architecture is shown in Fig.~\ref{herokuPiCloud}.
+An experiment using an instance of the P-Peaks problem generator
+benchmark is used to evaluate the scalability and ease of use of the platform
+and also the level of performance of the Evospace model in this setting. 
+
+The remainder of the paper proceeds as follows. Section~2 reviews related work. Afterwards, Section~3 describes the EvoSpace model and implementation details. The experimental work is presented in Section~4. Finally, conclusions are given in Section~5.
+
+\begin{figure*}[!t]
+    \centering
+        \includegraphics[width=5in]{pdf/evocloud.pdf}
+    \caption{Conceptual diagram of how EvoSpace fits within the cloud computing model.}
+    \label{fig:evocloud}
+\end{figure*}
+
+\section{Related work}
+Using available Internet resources for EC has been the focus of recent research in the field. The use of volunteer computing using BOINC open source software is reported by Cole et al. \cite{MilkyWay}; where users share the idle time on their computers. The computing power of browsers along with their ubiquity is also used by Merelo et al. \cite{JSON}; an advantage of this approach is that installation of software is not required, as users can simply visit a webpage to download the worker script. Cloud computing has also been used as a way to obtain low-cost processing power. Di Martino et al. in \cite{di2013towards} uses the Google App Engine (GAE) platform to implement an island model Genetic Algorithm (GA). Garcia-Arenas et al.  \cite{garcia2011} used Dropbox as a cloud-based storage server for a pool-based EA, reporting its architecture as viable solution for some types of problems. Other researchers have focused on the scalability offered by the cloud infrastructure \cite{fazenda2012}, \cite{CloudScale}. To facilitate the development of EAs using cloud services, libraries are being developed;; for instance FlexGP \cite{FlexGP}, using Hadoop-MapReduce; Vecchiola et al. \cite{VecchiolaCORR}  implemented a cloud-based version of the EMO algorithm. Research in  cloud-based EC solutions, is currently oriented towards the evaluation of different cloud architectures; and the development of suitable distributed EA algorithms and libraries.
+
+With respect to Evospace, similar pool-based approaches can be traced back to the A-Teams system \cite{ateam}, which is not restricted to EAs. Another proposal is made by G. Roy et al. \cite{roy:2009}, who developed a multi-threaded system with a shared memory architecture that is executed within a distributed environment. On the other hand, Bollini and Piastra \cite{bollini:1999} present a system that decouples population storage from the evolutionary operations. The most recent comparable work with EvoSpace is the SofEA system of Merelo et al. \cite{sofea:naco,sofea:evopar2012}. SofEA is an EA in which the population is also mapped to a central CouchDB object store. An important difference is that in SofEA all the information regarding the evolutionary progress is continuously updated on the central repository, while in EvoSpace the population container does not store knowledge regarding the search.
+
+In this work we compare the options available for a cloud-based EA architecture, designed with two PaaS components. The comparison considers the scalability of a distributed evolutionary algorithm, when using different configurations of these services. Configuration options are proposed considering three small-budgets, and then tested with a benchmark. In the following section the EvoSpace model and the corresponding cloud-based implementation are presented.
+ 
+
+\section{EvoSpace}
+\label{sec:evo}
+EvoSpace consists of two main components (see Fig.~\ref{fig:evo}): (i) the EvoSpace container
+that stores the evolving population and (ii) remote clients called EvoWorkers, which execute the actual evolutionary process,, while EvoSpace acts only as a population repository.
+In a basic configuration, EvoWorkers extract a small subset of the population, and use it as the initial population for a local EA executed on the client machine. Afterwards, the evolved population from each EvoWorker is returned to the EvoSpace container. A server-side ReInsertionManager process is used to alleviate possible problems that might occur during the search;
+for instance, when the EvoSpace container starves or connections are lost. This can be done because a copy of each sample is stored in a priority queue used by ReInsertionManager to re-insert the sample to the central population;
+similar to games where characters are respawned after a certain time. In the experiments conducted in this work the ReInsertionManager is not activated, as EvoWorkers are being executed in a server platform where lost connections are rare. Fig.~\ref{fig:evo} illustrates the main components and dataflow within EvoSpace.
+
+\begin{figure}[!t]
+    \centering
+        \includegraphics[width=3.5in]{pdf/evospaceExample.pdf}
+    \caption{Main components and dataflow within EvoSpace.}
+    \label{fig:evo}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.2in]{pdf/herokuPiCloud}
+\caption{EvoSpace cloud-based architecture.}
+\label{herokuPiCloud}
+\end{figure}
+
+\subsection{Implementation}
+Individuals are stored in-memory, using the Redis key-value database.
+Redis was chosen over a SQL-based management system, or other non-SQL alternatives, because it provides a hash based implementation of sets and queues which are natural data structures for the EvoSpace model. For example, selecting a random key from a set has a complexity of O(1). The logic of EvoSpace is implemented as a python module exposed as a Web Service using Cherrypy and Django http frameworks. The EvoSpace web service can interact with any language supporting JSON-RPC or Ajax requests. The EvoSpace modules and workers in JavaScript, JQuery and python are available with a Simplified BSD License from https://github.com/mariosky/evospace. We present next a PaaS based implementation of EvoSpace.
+
+\subsection{Evospace as a Heroku Application}
+Heroku is a multi-language PaaS, supporting among others
+Ruby, Python and Java applications. The basic unit of composition on
+Heroku is a lightweight container running a single user-specified
+process. These containers, which they call {\em dynos}, can include web
+(only these can receive {\tt http} requests) and worker processes
+(including systems used for database and queuing, for instance).
+These  process types are the prototypes from which one or more dynos can be instantiated;
+if the number of requests to the server increases
+more instances can be assigned on-the-fly. In our case, our CherryPy web application server
+runs in one web process, when the number of workers was increased we added more dynos (instances) of the CherryPy process.
+% scaling why? no entiendo lo que significa en este contexto - JJ
+% detalle la explicacion
+This model is very different from a VPS where users pay for the
+whole server; in a process based model, users pay only for the
+processes they need.
+%deberías usar alguna tipografía para las aplicaciones, \sc
+%por ejemplo. O mayúsculas en la primera letra, simplemente - JJ
+
+Additionally to CherryPy a Redis store is also needed.
+In Heroku different functionality can be assigned to applications as Add-On services.
+Although Add-Ons can be offered by external providers, they are managed directly in Heroku
+either through the command line interface or through the web interface.
+
+Although free redis Add-Ons are available  \url{https://addons.heroku.com/},
+they have important limitations (see Table~\ref{Redis}).
+Initially we used the RedisToGo Add-On with a free Nano plan, as this plan only accepts
+10 concurrent connections, for experiments with more than 8 workers this small number of connections created a bottleneck, so we added a pay service from Redis Cloud Add-On, for \$10.00, which included 100MB of memory and 256 connections.
+Once deployed the web process can be scaled up by
+assigning more dynos; in our case and in the more demanding configurations of
+our experiments, the web process was scaled to 36 dynos. At the moment
+750 dyno hours each month are assigned to applications free of charge,
+as they are prorated to the hour; an experiment can freely use many
+dynos for small periods of time as long as the limit is not
+exceeded. Instructions and code for deployment is available at
+\url{http://www.evospace.org/software.html}
+% Enlace directo a este código - JJ -resolved
+% usa más los puntos y coma, hombre - JJ
+% Siii, aunque se supone que los que programamos Python no ocupamos
+
+\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+%\extrarowheight as needed to properly center the text within the cells
+\caption{ Redis Store Add-On Options as of March 2013, *Options used in this work.}
+% igual, pon lo que has usado y la referencia de los precios - JJ
+\label{Redis}
+\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+Add-on   		& Plan 		& ea. Month (USD) 	& RAM (MB) & Connections \\
+\hline
+\hline
+Redis Green 	& Basic 	& \$169.00 			&  750		& 2048 		   \\
+\hline
+Redis Cloud 	& 100MB*  	&  \$10.00 			&  100		& 256 		   \\
+ 				& 20MB 		&  Free 			&   20		&  10 		   \\
+\hline
+Open Redis  	& Micro 	&  \$10.00 			&   50		& 256 		   \\
+\hline
+RedisToGo   	& Mini 		&   \$9.00 			&   20		&  50  		   \\
+            	& Nano* 	&   Free 			&    5		&  10  		   \\
+\hline
+MyRedis (Beta)  & Test 		&   Free 			&   100		&   3  		   \\
+\hline				
+\end{tabular}
+\end{table}
+
+\subsection{Evoworkers as PiCloud Jobs}
+We could have used Heroku as the host of the EvoWorkers, as their code is also written in Python; but PiCloud is a platform specialized in high performance and scientific computing applications and has more options of computing resources they call \emph{cores}. A partial list is shown in Table~\ref{plans}. PiCloud is a PaaS, with deep Python integration; we could work directly from our text editors, and run the application as if it was local. Using a library, Python functions are transparently uploaded to PiCLoud's servers as units of computational work they call \emph{jobs}. Each job is added to a queue, and when there is a core available, the job is assigned to it. Here we  distinguish two types of cores, Standard and Realtime. Each type is described next.
+
+\paragraph{Standard} When using what we call Standard cores, jobs are always added to a queue; the time they remain in there depends on current system load and available resources. PiCloud gives for free 20 computing hours of this type of cores.
+
+\paragraph{Realtime} Realtime cores can be reserved (for a fee) for certain amount of time, when reserved, cores are available immediately allowing a parallel execution. When Realtime cores are reserved a provisioning time is required in our case it was less than 10 minutes.
+
+In this work, both types of cores are compared, the Standard option as  a free solution (up to 20 hours), and Realtime core as a low-cost alternative. For both core types the c2-core was selected, as it is a well balanced alternative; recommended by PiCloud for ``number crushing applications''. Each c2 has a capacity of 2.5 compute units (explained next), 800 MB of memory, moderate I/O performance and a
+64-bit platform. A compute unit as defined by Amazon provides ``the equivalent CPU capacity of a 1.0-1.2 GHz 2007 Opteron or 2007 Xeon processor''.
+We also tested the s1 core type option, but the variation on compute units, resulted in some EvoWorkers taking to much time too finish their work, they were still working when all the others have already finished. Although using this type of cores, could be more representative of a real-world scenario, but was left as future work.
+
+
+Both Heroku and PiCloud platforms are deployed  on top of Amazon Web Services (AWS) infrastructure in the US-EAST Region. This ensures minimal latency and a high bandwidth communication between the services, and there is no charge for data transfer costs between both services. The code for the EvoWorkers implementation is publicly available from a github repository \url{http://goo.gl/8Rv5K}.
+
+%Enlace a este código - JJ -resolved
+% Quizás deberías justificar (o probar) a usar todos esos EvoWorkers
+% en tu propia máquina a ver qué resultados obtienes.
+%
+%Por otro lado,
+% sería conveniente que justificaras el uso de PiCloud; heroku también
+% admite Python, creo - JJ
+
+\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+%\extrarowheight as needed to properly center the text within the cells
+\caption{ Core Type Options as of March 2013. *Options used in this work.}
+% Deja claro los que se han usado en este trabajo y pon un URL para
+% ver de dónde lo has sacado (podría variar con el tiempo) - JJ
+\label{plans}
+\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+\begin{tabular}{|l||c|l|l|}
+\hline
+Service 	& Core 		& Resources & Pricing  \\
+\hline
+\hline
+ PiCloud  	&            	& 1 Compute Unit 	 &  \$0.05/hour   \\
+          	&  c1				& 300 MB of memory                   &       	      \\
+          	&				& I/O Performance: Low                   &       	      \\
+\hline
+            & 			&   2.5 Compute Units                &     \$0.13/hour  	      \\
+          	& c2*			&   800 MB of memory                 				 &       	      	\\
+			&				&  I/O Performance: Moderate                  				 &       	      	\\	
+\hline	
+	&				&    Variable Compute Units (Up to 2)                				 &       \$0.04/hour 	      	\\
+	& s1*				&   300 MB of memory                 				 &       	      	\\	
+	& 			&   I/O Performance: Low                 				 &       	      	\\
+	& 				&   Unique IP address per core                  				 &       	      	\\
+\hline
+\hline				
+Heroku	&	Dyno   &            1 Compute Unit        				 &  \$0.05/hour      	      	\\
+		&				&    512MB of memory                				 &       	      	\\
+
+\hline		
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+\section{Experimental work}
+
+% Introduce cada sección con lo que vas a hacer y una presentación de
+% las subsecciones - JJ
+% OK
+
+In this section we compare different configurations according to three budgets; these budgets were chosen according to personal experience and according to services we already use. The objective of this analysis is to assess the actual scalability that can be achieved in a benchmark distributed evolutionary algorithm, and the possible trade-offs between options. First the proposed budgets and the instance of the P-Peaks problem are presented.  
+
+Assuming we have 750 free hours for our application in Heroku these are the proposed  budgets (see Table~\ref{options}):
+
+\begin{itemize}
+\item ``Option A" is no budget at all, but a credit card. Heroku needs a credit card as validation to add even free Add-Ons.
+
+\item A budget of \$10.00 is a common price for a very basic VPS with 64 MB of ram for a complete month in \emph{vpslink.com}, this budget is labeled ``Option B".
+
+\item A budget of \$20.00 is a common the price of a basic VPS service in \emph{linode.com}, (for instance a Linode with 512 MB of ram for a complete month). We call this budget ``Option C".
+
+\end{itemize}
+In the following sub sections we present the benchmark used, and the experimental set-up.
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Configuration options, according to available budget, all prices (USD).}
+\label{options}
+\centering
+\begin{tabular}{|l|l|r|r|}
+\hline
+Provider 		& Detail 					& Amount  	& Total Budget \\
+\hline
+
+\hline
+ 				& Option A 			&			& \\
+\hline
+ Heroku 	 	& 1 Dyno	, 750 hours    	& 0.00 		&\\
+ RedisToGo 		& Nano				    	& 0.00 		&\\
+ PiCloud 	 	& c2 Standard  20 hours 	& 0.00		& \\
+\hline
+ Total   	 	& 						 	& 0.0		& 0.00\\
+\hline
+
+\hline
+ 				& Option B			&			&  \\
+\hline
+ Heroku 	 	& 1 Dyno, 750 hours    		& 0.00 		&\\
+ Redis Cloud 	& 100MB				    	& 10.00 	&\\
+ PiCloud 	 	& c2 Standard  20 hours 	&  0.00		& \\
+\hline
+ Total   	 	& 						 	& 	& 10.00\\
+\hline
+
+\hline
+ 				& Option C 			&			&  \\
+\hline
+ Heroku 	 	& 1 Dyno, 750 hours    	& 0.00 		&\\
+ Redis Cloud 	& 100MB				    	& 10.00 	&\\
+ PiCloud 	 	& c2 Realtime  76.9 hours 	& 10.00		& \\
+\hline
+ Totals   	 	& 						 	&   	    & 20.00\\
+\hline
+
+
+
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Benchmark}
+\label{ss:benchmark}
+The experiment reported here uses a multimodal problem generator to
+investigate the performance of the Evospace distributed algorithm in a
+cloud based platform. A P-Peaks generator has been chosen because the problem
+(and the computing resources needed for the search) can be appropriately scaled.
+Proposed by De Jong et al. in \cite{Jong:PS97} a
+P-Peaks instance is created by generating a set of P random N-bit
+strings, which represent the location of the P peaks in the space. To
+evaluate an arbitrary bit string \begin{math} \mathbf{x} \end{math}
+first locate the nearest peak (in Hamming space). Then the fitness of
+the bit string is the number of bits the string has in common with
+that nearest peak, divided by N. The optimum fitness for an individual
+is 1. This particular problem generator is a generalization of the
+P-peak problems introduced in \cite{Jong:1990}.             % this
+                                % problem has been chosen because (no
+                                % me sirve porque me lo dijo JJ - JJ
+                                % Oh estaba más abajo, pero aquí lo justifico rapidito.
+
+\begin{equation}
+f_{P-PEAKS}(\mathbf{x})=\frac{1}{N} \overset{P}{\max_{i=1}} \{N-hamming(\mathbf{x},Peak_i)   \}
+\end{equation}
+
+A large number of peaks induce a time-consuming algorithm,
+since evaluating every string is computationally hard; this is
+convenient since to evaluate these type of distributed evolutionary
+algorithms fitness computation has to be significant with respect to
+network latency (otherwise, it would always be faster to have a
+single-processor version). However
+according to Kennedy and Spears \cite{Kennedy:1998ch} the length of
+the string being optimized has a greater effect in determining how
+easy or hard is the problem. In their experiments an instance having P
+= 200 peaks and N = 100 bits per string is considered to produce a
+considerably difficult problem. Alba et al. \cite{Alba:2002dq}
+considered an instance with greater difficulty with P = 512 peaks and
+N = 512, as a benchmark for an heterogenous execution of parallel
+genetic algorithms. As our  experiments were going to be executed
+using external pay\textendash per\textendash use resources, a moderate
+demand problem was configured. Our instance uses P = 256 peaks and N =
+512 bits, this configuration requires considerable computational time,
+but also within our allocated budgets and considering 30 executions for each of the experiments.
+% En qué platforma ? - JJ
+% ¿Un experimento = Una configuracion con 30 execuciones?
+
+
+\subsection{Experimental Set-up}
+As EvoSpace is only the population store, EvoWorkers must implement the genetic operators. As stated earlier, our objective is to let researchers use the same tools as in their local setting. As a test, the genetic algorithm executed by EvoWorkers has been implemented using the DEAP (Distributed Evolutionary Algorithms in Python) framework \cite{DEAP_JMLR2012}. Only the basic non-distributed GA library was used. Three methods were added to the local algorithm: getSample() and  putBack(); and  another for the  initialization of the population. They simply use DEAP´s methods; for instance to generate the initial population, a local initialize() is called and the population sent to EvoSpace.
+
+The selection of parameters was based on those used in \cite{Alba:2002dq}: a
+tournament size of 4 individuals, a crossover rate of 0.85 and a
+population of 512 individuals. In  \cite{Jong:PS97} a mutation rate
+equal to the reciprocal of the chromosome length; is recommended, as
+DEAP uses two parameters they were defined as follows, mutation
+probability of 0.5 and an independent flip probability of 0.02. For
+EvoWorkers the parameters were 128 worker generations for each
+sample, and a sample size of 16. A summary of the setup is presented in Table~\ref{params}.
+
+
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{GA and EvoWorker parameters for experiments.}
+\label{params}
+\centering
+\begin{tabular}{|l|c|}
+\hline
+\multicolumn{2}{|c|}{GA Parameters} \\
+\hline
+Tournament size & 4 \\
+Crossover rate & 0.85  \\
+Population Size & 512 \\
+Mutation probability & 0.5 \\
+Independent bit flip probability  & 0.02 \\
+\hline
+\multicolumn{2}{|c|}{EvoWorker Parameters} \\
+\hline
+Sample Size & 16 \\
+Generations & 128 \\
+\hline
+\multicolumn{2}{|c|}{Variable Parameters} \\
+\hline
+PiCloud Worker Type & Realtime, Standard \\
+Number of Workers & 2,4,8,16,28 \\
+Number of Executions & 30 \\
+\hline
+
+\end{tabular}
+\end{table}
+
+
+
+%Quedaría más claro en una table. OK  Explicar qué parámetros  de estos no
+%van a tener nada que ver (en principio) con las prestaciones No entendí
+%paralelas - JJ
+Each worker created on the cloud their own set of random
+peaks using the same seed. Experiments were run for 2, 4, 8, 16 and
+28 workers, scaling accordingly to 4, 6, 12, 22 and 36 web
+dynos.
+
+%Y por qué hiciste este otro experimento? Comienza con ... As a
+%baseline execution, we... - JJ OK
+As a baseline execution, the experiment was repeated in a local computer.
+The specifications for the local computer are as follows, a
+2.2 Ghz Intel Core i7 processor, 16 GB of 1333 DDR3 memory, and Mac OS
+X 10.7.5 operating system. All the software was executed with a Python
+interpreter version 2.7.2 for 64-bit architectures. A total of 74.084
+c2 hrs were used in PiCloud between tests and experiments. For each
+configuration a total of 30 runs were executed. Before each iteration
+a single job is sent to PiCloud to initialize the population,
+asynchronously the other jobs are sent to PiCloud but with a
+dependence on the first job. As soon as the initialization job is
+finished all workers start requesting samples.
+
+\section{Results}
+
+
+% ¿No debería ser una sección aparte? Así se le da más énfasis - JJ OK
+%As expected % por quién? por qué?- JJ  Bueno eso decía Kennedy and Spears, pero prefiero no justificarlo :)
+The problem required considerable computational time: in a local
+computer each run took an average of 1567.36 seconds to find the
+optimal solution (see Table~\ref{local}).
+The execution used a single
+core in the computer and CPU activity remained low for the whole
+length of the experiment. On the other hand, the parallel execution
+time was significantly lower even when two workers were used,
+clocking at less than 180s even in the worst cases.  %Explicar que puede deberse a
+                                %que el mac sea una mierda, porque hay
+                                %mucha diferencia, un orden de
+                                %magnitud - JJ
+
+Parallel executions are discussed next, for Standard and Realtime cores.
+
+\begin{table}[!t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Average Times and Evaluations of 30 executions in a local computer.}
+\label{local}
+\centering
+\begin{tabular}{|c|c|}
+\hline
+Average time in seconds & Average number of evaluations \\
+\hline
+1567.36 & 100690.5  \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\subsection{Standard cores}
+Experiments were concluded within budget, even with the additional work needed as the result of occasional re-starting of experiments. Standard cores are used in both Options A and B; and the only difference between them is the number of connections supported by the Redis Add-On. comparing Figures~\ref{fig:plot_time_standard} and \ref{fig:plot_time_real}, we see that from 2 to 8 workers the time is marginally higher when using Standard cores, but with more spread. This difference can be attributed to the waiting period Standard cores can have. Comparable results can be expected for free (Option A), as the resources allocated are the same. In Option B, the Redis Add-On has a capacity of 256 connections this enabled  the addition of more workers. Instead of decreasing the time as 16 and 28 workers were added, we can see that the time can be potentially worst. It was observed that with 16 workers or more not all of them were actually used. In some cases experiments finished before EvoWorkers could even start working. Also there is more spread  in the number of evaluations needed to find a solution (Fig.~\ref{fig:plot_evals_standard}) as EvoWorkers increase. For this particular experiment, we consider Option A to be better than Option B. Changes to parameters, or even the model, could be needed in order to benefit from the additional workers.
+
+
+%Introduce las subsecciones. Yo creo que, como los cores estándar
+%tienen peores resultados, tendrían que ir primero - JJ
+
+\subsection{Realtime cores}
+Average times for the configuration using Realtime cores (Option A)
+are presented in Fig.~\ref{fig:plot_time_real}. As it can be seen,
+incrementing the number of workers reduced the time to solution, but only up to
+16 workers. With 28 workers time to solution did not improve. This is
+related to the increase in the number of evaluations needed to find
+the optima, which is shown in Fig.~\ref{fig:plot_evals_real}.
+This figure shows that the number of evaluations needed to find the
+solution increases as more workers are used. This behavior has an
+impact on the time to solution, because each evaluation (as stated
+earlier), is computationally expensive. From 2 to 8 workers the number
+of evaluations remains less than in the baseline GA, but from that point on
+the number is higher. A possible reason for this is that as
+the number of workers increases, the number of individuals that remain
+in the population waiting to be replaced decreases. As there are fewer
+individuals in the population the probability of taking the same individuals
+when replacing a sample is increased. This problem is also reported
+by Merelo et al. in  \cite{sofea:naco}, where he presents a pool-based
+architecture with dissimilar workers.
+
+%$remaining=population-(numWokers*sampleSize)$.   These numbers are shown
+%in Table \ref{remains}.
+%No sé si discutir más este punto, ahi me ayudan.
+% Bueno, ahora no queda nada de claro. Para empezar, referencia a mi
+% trabajo sobre CouchDB donde ocurre algo similar, siempre se quedan
+% sin evaluar individuos. Para seguir, dejar claro si es una media o
+% qué. Finalmente, dejar claro qué implica esto. Si no son
+% reemplazados, ¿no entran a formar parte del algoritmo genético? - JJ
+Another possible factor can be that  when a worker reaches an optimal solution,
+it needs to notify the server so other workers can stop their
+executions; this can happen just as another worker is getting a sample, all
+% the same worker?
+those evaluations are added after the solution is found. As a future work,
+other experiments could be conducted to have an insight on how much redundant
+evaluations are increased as the result of adding more workers.
+
+                 % Como podrias saber si esto es cierto? Da una pista
+                 % o proponlo como trabajo futuro - JJ
+				 % Mmm está en los datos pero no es facil mostrar
+%           Ponlo como trabajo futuro entonces - JJ
+%
+% Podrías dar una "rule of thumb" diciendo que el número de
+% trabajadores máximo está relacionado con la población inicial. De
+% hecho, con un experimento con mayor población inicial (y un problema
+% más complejo) dividida entre todos los trabajadores se podría probar
+% esto - JJ
+
+For other problems where the evaluation of individuals is not very
+demanding, there is a concern for the costs of communication between the
+EvoSpace and EvoWorkers. In these experiments this cost was
+negligible, in Fig.~\ref{plot_ges} a box plot of the time required for the
+three main methods of EvoWorkers for the 28 Realtime workers
+experiment (30 executions) is shown.
+
+
+
+% ¿Por qué en este sólo? ¿No sería interesante ver el coste para el
+% resto también? (además, hay espacio para añadir más cosas) - JJ
+
+%%
+%% Agregar para realtime y standard
+%%
+   % Una vez más, para
+                                % cuantos experimentos, todo eso --
+                                % JJ
+								% Ups y no es el average time, si acaso la mediana
+
+% Además, tendrías que decir cómo has calculado esto y la
+% trascendencia que tiene para los resultados obtenidos.
+
+% Lo que viene
+% a decir es que el tiempo usado en la evolución es prácticamente
+% igual al total, ¿correcto? ¿No podrías poner también el porcentaje?
+% - JJ   FALTA
+
+
+
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+%\extrarowheight as needed to properly center the text within the cells
+%\caption{Remaining population as workers increase}
+%\label{remains}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|c|c|c|c|c|}
+%\hline
+%workers & 2 & 4 & 8 & 16 & 28\\
+%\hline
+%remaing population & 480 & 448 & 384 & 256 & 64\\
+% remaing? - dónde está el tiempo ? - JJ
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+
+%Esta figura no la referencias.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{pdf/plot_time_standard}
+\caption{Time required to solution, Standard cores.}
+\label{fig:plot_time_standard}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{pdf/plot_time_realtime}
+\caption{Time required to solution after switching to PiCloud Realtime
+  cores.}
+\label{fig:plot_time_real}
+\end{figure}
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{pdf/plot_evals_standard}
+\caption{Number of evaluations to solution, Standard cores.}
+\label{fig:plot_evals_standard}
+\end{figure}
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{pdf/plot_evals_realtime}
+\caption{Number of evaluations to solution, Realtime cores.}
+\label{fig:plot_evals_real}
+\end{figure}
+
+
+
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in]{pdf/plot_ges}
+\caption{Time of worker's methods, GetSample(), Evolve(), PutSample().}
+\label{plot_ges}
+\end{figure}
+
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=3in]{pdf/plot_time_local}
+%\caption{Time required to solution, local computer} % Esto debería ir
+                                % o en una tabla junto con los otros
+                                % resultados o en el gráfico
+                                % correspondiente. Un gráfico con un
+                                % solo valor no aporta mucho - JJ
+								% Ok Mejor fuera
+%\label{fig:localTime}
+%\end{figure}
+
+%\subsection{Experience}
+%Esto debería ir a las conclusiones directamente - JJ OK
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+\section{Conclusions, discussion and future work}
+
+Cloud computing platforms are still evolving and in the case of the two
+platforms used in this work we have succeeded in one important aspect: a
+transparent integration with the tools we already use. Heroku enabled
+an almost direct deployment from our git repository to their platform.
+With a CLI tool it was possible to scale the service as the demand
+increased with just one command;  their pricing structure also tends to
+benefit consumers of short time intensive work, as needed by the
+experiments presented. On the other hand, PiCloud offers a web-based dashboard where
+jobs can be inspected, showing the status of each job, Disc, CPU and
+RAM usage and other analytics. Also each job's  standard output,
+error and logging can be inspected.
+
+An important drawback of both services is also related to the
+researcher's tools: In Heroku only certain versions of languages are
+currently supported and only a certain number of services are
+available as Add-Ons. In PiCloud the integration with Python is
+transparent, but other languages or binaries need to be deployed
+to customizable environments. They cannot offer all the liberty of a
+VPS, as it would be a contradiction to their approach.
+
+In general we found the use of PaaS components more convenient, compared
+to Infrastructures as a Service (IaaS); where in our experience more time, another valuable resource is invested in administrative tasks. In our experiments, in some cases we obtained similar results with in a free or a paid option, but the best results were obtained by the option with more budget.  Evospace scaled well for this type of demand; but experiments hinted towards the need to adjust EvoSpace parameters
+as the number of workers increases.
+
+As future work, other cloud-based architectures can be evaluated, other options with free tiers include OpenShift, Amazon Elastic Beanstalk, Google App Engine and Windows Azure.
+Hybrid low-cost architectures can also be tested, for instance using W3C Web Workers
+in browsers and PaaS. Finally real world applications can be implemented, in games and in Interactive Evolutionary Computation (IEC).
+
+% debes ofrecer algún tipo de conclusión sobre a) generalidad de estos
+% resultados. Si el resultado es Heroku y PiCloud están bien, mal o
+% regular, mal resultado es. Generaliza a todo tipo de plataformas: ¿es
+% mejor usar un PaaS o un IaaS? ¿Mejor gratis o de pago? ¿Qué hay que
+% hacer para decidir si una plataforma determinada es buena para mi
+% problema?
+% Por otro lado, saca también alguna conclusión del problema en sí: el
+% escalado está bien (pero no es gratis), los individuos sin evaluar
+% son un problema, algo así.
+% Explica también como se podrían aprovechar los cores gratuitos
+% trabajando con un máximo de 10 workers: enviando más individuos para
+% aprovechar de cada vez, por ejemplo, o cambiando a otro tipo de
+% modelo - JJ
+
+% Finalmente pon un párrafo extenso de trabajo futuro: probar otras
+% plataformas, aplicarlo a problemas reales (¿el mastermind?
+% ¿juegos?), extender al navegador los clientes con jQuery y
+% autentificación con Facebook (interactive), en fin, todo eso... -JJ
+
+
+
+
+
+% use section* for acknowledgement
+\section*{Acknowledgment}
+The authors would like to thank the support team of PiCloud, for technical assistance.
+
+This work is supported by projects 4616.12-P and 4617.12-P awarded by DEGEST-ProIFOPEP (Mexico), TIN2011-28627-C04-03 and -02 (ANYSELF), awarded by the Spanish Ministry of Science and Innovation, P08-TIC-03903 (EvOrq) awarded by the Andalusian Regional Government, project 83 (CANUBE) awarded by the CEI-BioTIC UGR
+(\url{http://biotic.ugr.es}) and CONACYT (Mexico) Basic Science Research Project No. 178323 and DGEST (Mexico) Research Project No. TIJ-ING-2012-110. Regional Government Junta de Extremadura, Consejería de Econom\'ia, Comercio e Innovaci\'on and FEDER, project GRU10029.
+% No se te olvide agradecer a los de PiCloud  y tus propios proyectos
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+\IEEEtriggeratref{18}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+
+% Cuidado con las mayúsculas en títulos de trabajos - JJ
+\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+%Revisa la bibliografía:
+% ken de Jong debería ser de Jong, ken, no kad Jong. Mi apellido sale también con la ó suprimida
+% Alguno ya lo he modificado yo, sobre todo mayúsculas y minúsculas.
+\bibliography{biblio}
+
+
+% that's all folks
+\end{document}
